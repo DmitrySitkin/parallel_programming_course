@@ -94,6 +94,9 @@ int main(int argc, char *argv[]) {
     int start = std::rand() % (NUM_OF_VERTEX - 1);
     int *graph = init_graph(count_edge, NUM_OF_VERTEX);
     int *result = dijkstra(graph, start, NUM_OF_VERTEX);
+    for (int i = 0; i < vert; i++) {
+        std::cout << result[i] << " ";
+    }
   //  print_d(result, NUM_OF_VERTEX);
     return 0;
 }
