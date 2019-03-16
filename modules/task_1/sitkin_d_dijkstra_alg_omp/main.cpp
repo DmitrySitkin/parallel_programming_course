@@ -35,7 +35,7 @@ int* init_graph(int countEdge, int countVertex) {
     for (int i = 0; i < countVertex; i++) {
         graph[i] = new int[countVertex];
     }
-    srand(time(NULL));
+    srand((unsigned int)std::time(NULL));
 
     for (int i = 0; i < countVertex; i++) {
         for (int j = 0; j < countVertex; j++) {
@@ -88,7 +88,7 @@ int* dijkstra(int* graph, int start, int count_vertex) {
     return d;
 }
 int main(int argc, char *argv[]) {
-    srand(time(NULL));
+    srand((unsigned int)std::time(NULL));
     int vert = NUM_OF_VERTEX;
     int count_edge = (vert - 1) + std::rand() % ((vert * (vert - 1)) / 2);
     int start = std::rand() % (NUM_OF_VERTEX - 1);
