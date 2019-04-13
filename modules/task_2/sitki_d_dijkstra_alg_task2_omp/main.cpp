@@ -44,9 +44,10 @@ int* init_round(int countEdge, int countVertex) {
                 graph[i][j] = 0;
             } else {
                 if (j == i + 1) {
-                    graph[i][j] = 1+ std::rand() % WEIGHT;
+                    graph[i][j] = 1 + std::rand() % WEIGHT;
                 } else {
                     graph[i][j] = INFINITI;
+                }
             }
         }
     }
@@ -62,33 +63,33 @@ int* init_round(int countEdge, int countVertex) {
     return one_graph;
 }
 
-int* init_graph(int countEdge, int countVertex) {
-    int* one_graph = new int[countVertex * countVertex];
-    int** graph = new int*[countVertex];
+    int* init_graph(int countEdge, int countVertex) {
+        int* one_graph = new int[countVertex * countVertex];
+        int** graph = new int*[countVertex];
 
-    for (int i = 0; i < countVertex; i++) {
-        graph[i] = new int[countVertex];
-    }
-    srand((unsigned int)std::time(NULL));
+        for (int i = 0; i < countVertex; i++) {
+            graph[i] = new int[countVertex];
+        }
+        srand((unsigned int)std::time(NULL));
 
-    for (int i = 0; i < countVertex; i++) {
-        for (int j = 0; j < countVertex; j++) {
-            if (i == j) {
-                graph[i][j] = 0;
-            } else {
-                graph[i][j] = std::rand() % WEIGHT;
-                if (graph[i][j] == 0) {
-                    graph[i][j] = INFINITI;
+        for (int i = 0; i < countVertex; i++) {
+            for (int j = 0; j < countVertex; j++) {
+                if (i == j) {
+                    graph[i][j] = 0;
+                } else {
+                    graph[i][j] = std::rand() % WEIGHT;
+                    if (graph[i][j] == 0) {
+                        graph[i][j] = INFINITI;
+                    }
                 }
             }
         }
-    }
-    for (int i = 0, t = 0; i < countVertex; i++) {
-        for (int j = 0; j < countVertex; j++) {
-            one_graph[t] = graph[j][i];
-            t++;
+        for (int i = 0, t = 0; i < countVertex; i++) {
+            for (int j = 0; j < countVertex; j++) {
+                one_graph[t] = graph[j][i];
+                t++;
+            }
         }
-    }
     return one_graph;
 }
 
@@ -178,7 +179,6 @@ int* parallel_dijkstra(int* graph, int start, int count_vertex) {
 int main(int argc, char *argv[]) {
     srand((unsigned int)std::time(NULL));
     omp_set_num_threads(6);
-    int tid;
     int vert = NUM_OF_VERTEX;
     int count_vertex = NUM_OF_VERTEX;
     int count_edge = (vert - 1) + std::rand() % ((vert * (vert - 1)) / 2);
