@@ -183,7 +183,7 @@ int main(int argc, char *argv[]) {
     int count_edge = (vert - 1) + std::rand() % ((vert * (vert - 1)) / 2);
     int start = std::rand() % (NUM_OF_VERTEX - 1);
 
-    int *graph = init_graph(count_edge, NUM_OF_VERTEX);int *ideal_graph = init_round(NUM_OF_VERTEX + 1, NUM_OF_VERTEX);
+    int *graph = init_graph(count_edge, NUM_OF_VERTEX);
     int *result = NULL;  // = dijkstra(graph, start, NUM_OF_VERTEX);
     int *parallel_result = NULL;
 
