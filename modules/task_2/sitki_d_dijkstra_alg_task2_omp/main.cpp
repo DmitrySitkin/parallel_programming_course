@@ -180,14 +180,12 @@ int main(int argc, char *argv[]) {
     srand((unsigned int)std::time(NULL));
     omp_set_num_threads(6);
     int vert = NUM_OF_VERTEX;
-    int count_vertex = NUM_OF_VERTEX;
     int count_edge = (vert - 1) + std::rand() % ((vert * (vert - 1)) / 2);
     int start = std::rand() % (NUM_OF_VERTEX - 1);
 
     int *graph = init_graph(count_edge, NUM_OF_VERTEX);
     int *ideal_graph = init_round(NUM_OF_VERTEX + 1, NUM_OF_VERTEX);
     int *result = NULL;  // = dijkstra(graph, start, NUM_OF_VERTEX);
-    int *ideal_d = d_for_round(ideal_graph, start, NUM_OF_VERTEX);
     int *parallel_result = NULL;
 
     double t1 = 0.0;
