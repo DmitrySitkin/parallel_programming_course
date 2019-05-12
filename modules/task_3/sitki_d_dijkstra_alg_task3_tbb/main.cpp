@@ -214,7 +214,7 @@ std::pair<double, double>(math_exp_and_disp(std::map<double, double> m)) {
 }
 
 void experiment(int begin, int step, int count_step) {
-    int vert = NUM_OF_VERTEX;
+    // int vert = NUM_OF_VERTEX;
     int count_edge;
     int start;
 
