@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <vector>
 
 #define INFINITI 10000000
 #define WEIGHT 5
