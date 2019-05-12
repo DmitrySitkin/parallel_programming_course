@@ -255,6 +255,7 @@ void experiment(int begin, int step, int count_step) {
         size += step;
         delete graph;
         delete result;
+        delete parallel_result;
     }
 
     std::cout << std::endl;
