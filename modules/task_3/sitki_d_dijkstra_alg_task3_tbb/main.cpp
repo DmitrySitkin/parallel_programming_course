@@ -253,9 +253,9 @@ void experiment(int begin, int step, int count_step) {
         test_map[perfomance] += 1.0;
         test.push_back(perfomance);
         size += step;
-        delete graph;
-        delete result;
-        delete parallel_result;
+        delete[] graph;
+        delete[] result;
+        delete[] parallel_result;
     }
 
     std::cout << std::endl;
@@ -317,5 +317,8 @@ int main(int argc, char *argv[]) {
     std::cout << "Perfomance: " << time / ptime << std::endl;
     compare(parallel_result, result, NUM_OF_VERTEX);
     // experiment(950, 1, 50);
+    delete[] graph;
+    delete[] result;
+    delete[] parallel_result;
     return 0;
 }
